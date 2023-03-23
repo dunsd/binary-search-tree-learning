@@ -1,0 +1,21 @@
+{
+  "name": "binary-search-tree-learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dunsd/binary-search-tree-learning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dunsd/binary-search-tree-learning/issues"
+  },
+  "homepage": "https://github.com/dunsd/binary-search-tree-learning#readme"
+}

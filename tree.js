@@ -1,14 +1,13 @@
 import Node from "./node.js";
 
 const Tree = () => {
-    let root = null;
 
-    function sortArray(array) {
+    const sortArray = (array) => {
         const sortedArray = [...new Set(array)].sort((a,b) => a-b);
         return sortedArray;
     }
 
-    function buildTree(array) {
+    const buildTree = (array) => {
         let sortedArray = sortArray(array);
         if(array.length === 0) {return null} //Escape
         const mid = parseInt(sortedArray.length/2);
@@ -34,9 +33,27 @@ const Tree = () => {
         }
       }
 
+      const insert = (root, value) => {
+        if(root === null){
+            console.log(root);
+            root = Node(value);
+            console.log(root);
+            return root;
+        }
+        if(value > root.value) {
+            console.log(root.right);
+            root.right = insert(root.right, value);
+        }
+        else if(value < root.value) {
+            console.log(root.left);
+            root.left = insert(root.left, value);
+        }
+      }
+
     return {
         buildTree,
         prettyPrint,
+        insert,
     }
 }
 

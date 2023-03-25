@@ -11,4 +11,6 @@ let root = tree.buildTree(array);
 tree.prettyPrint(root);
 
 tree.insert(root, 17);
+tree.insert(root, 18);
+
 tree.prettyPrint(root);

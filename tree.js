@@ -21,6 +21,7 @@ const Tree = () => {
     }
 
     const prettyPrint = (node, prefix = '', isLeft = true) => { //Print function taken from The Odin Project.
+        //console.log(node);
         if (node === null) {
            return;
         }
@@ -35,25 +36,27 @@ const Tree = () => {
 
       const insert = (root, value) => {
         if(root === null){
-            console.log(root);
             root = Node(value);
-            console.log(root);
             return root;
         }
         if(value > root.value) {
-            console.log(root.right);
             root.right = insert(root.right, value);
         }
         else if(value < root.value) {
-            console.log(root.left);
             root.left = insert(root.left, value);
         }
+        return root;
+      }
+
+      const deleteNode = (root, value) => {
+
       }
 
     return {
         buildTree,
         prettyPrint,
         insert,
+        deleteNode,
     }
 }
 

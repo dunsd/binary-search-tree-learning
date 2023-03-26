@@ -14,3 +14,6 @@ tree.insert(root, 17);
 tree.insert(root, 18);
 
 tree.prettyPrint(root);
+
+tree.deleteNode(root, 17);
+tree.prettyPrint(root);

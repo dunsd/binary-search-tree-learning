@@ -127,6 +127,28 @@ const Tree = () => {
         if(result) return result;
       }
 
+      const preorder = (root, callback, result = []) => {
+        if(root === null) return;
+        if(root) {
+          if(callback) callback(root);
+          result.push(root.value);
+          preorder(root.left, callback, result);
+          preorder(root.right, callback, result);
+        }
+        if(result) return result;
+      }
+
+      const postorder = (root, callback, result = []) => {
+        if(root === null) return;
+        if(root) {
+          if(callback) callback(root);          
+          postorder(root.left, callback, result);
+          postorder(root.right, callback, result);
+          result.push(root.value);
+        }
+        if(result) return result;
+      }
+
     return {
         buildTree,
         prettyPrint,
@@ -135,6 +157,8 @@ const Tree = () => {
         find,
         levelOrder,
         inorder,
+        preorder,
+        postorder,
     }
 }
 

@@ -23,3 +23,5 @@ console.log(tree.find(root, 18));
 console.log(tree.levelOrder(root));
 console.log("inorder");
 console.log(tree.inorder(root));
+console.log(tree.preorder(root));
+console.log(tree.postorder(root));

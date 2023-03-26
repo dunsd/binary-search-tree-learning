@@ -183,6 +183,24 @@ const Tree = () => {
         return count;
       }
 
+      const isBalanced = (root) => {
+        if(root === null) {
+          return true;
+        }
+
+        let leftHeight = height(root.left);
+        let rightHeight = height(root.right);
+
+        return (Math.abs(leftHeight-rightHeight) < 2 ? 
+        true  :   false)
+        
+      }
+
+      const rebalanceTree = (root) => {
+        const inorderArr = inorder(root);
+        return root = buildTree(inorderArr);
+      }
+
     return {
         buildTree,
         prettyPrint,
@@ -194,8 +212,10 @@ const Tree = () => {
         preorder,
         postorder,
         height,
-        depth,
+        //depth,
         findDepth,
+        isBalanced,
+        rebalanceTree,
     }
 }
 

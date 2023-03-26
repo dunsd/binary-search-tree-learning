@@ -17,3 +17,5 @@ tree.prettyPrint(root);
 
 tree.deleteNode(root, 17);
 tree.prettyPrint(root);
+
+console.log(tree.find(root, 18));

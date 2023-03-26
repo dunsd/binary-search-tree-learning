@@ -83,11 +83,24 @@ const Tree = () => {
         return minv;
       }
 
+      const find = (root, value) => {
+        if(root === null || root.value === value){
+          return root;
+        }
+        if(value > root.value){
+          return find(root.right, value);
+        }
+        if(value < root.value) {
+          return find(root.left, value);
+        }
+      }
+
     return {
         buildTree,
         prettyPrint,
         insert,
         deleteNode,
+        find,
     }
 }
 

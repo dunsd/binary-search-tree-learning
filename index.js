@@ -9,6 +9,7 @@ let tree = Tree();
 
 let root = tree.buildTree(array);
 tree.prettyPrint(root);
+console.log(tree.height(root));
 console.log(tree.levelOrder(root));
 
 tree.insert(root, 17);
@@ -25,3 +26,7 @@ console.log("inorder");
 console.log(tree.inorder(root));
 console.log(tree.preorder(root));
 console.log(tree.postorder(root));
+
+console.log(tree.height(root));
+
+console.log(tree.findDepth(root, 12));

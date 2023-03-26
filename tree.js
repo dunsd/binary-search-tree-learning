@@ -149,6 +149,40 @@ const Tree = () => {
         if(result) return result;
       }
 
+      const height = (node) => {
+        if(node === null) return -1;
+        const leftHeight = height(node.left);
+        const rightHeight = height(node.right);
+
+        return Math.max(leftHeight, rightHeight)+1;
+      }
+
+      //Problem: has problems returning root case.
+      // const depth = (value, node, depthCount = -1) => {
+      //   if(node === null) return depthCount;
+      //   if(value === node.value) return depthCount;
+      //   if(value < node.value){
+      //     return depth(value, node.right, depthCount+1);
+      //   } 
+      //   else {
+      //     return depth(value, node.left, depthCount+1);
+      //   }
+      // }
+
+      const findDepth = (root, value) => {
+        if(root === null) {
+          return -1;
+        }
+        let count = -1;
+
+        if((root.value === value) ||  //check for value
+        (count = findDepth(root.left, value)) >= 0 || //check left tree
+        (count = findDepth(root.right, value)) >= 0) { //check right tree
+          return count+1;
+        }
+        return count;
+      }
+
     return {
         buildTree,
         prettyPrint,
@@ -159,6 +193,9 @@ const Tree = () => {
         inorder,
         preorder,
         postorder,
+        height,
+        depth,
+        findDepth,
     }
 }
 

@@ -9,6 +9,7 @@ let tree = Tree();
 
 let root = tree.buildTree(array);
 tree.prettyPrint(root);
+console.log(tree.levelOrder(root));
 
 tree.insert(root, 17);
 tree.insert(root, 18);
@@ -19,3 +20,4 @@ tree.deleteNode(root, 17);
 tree.prettyPrint(root);
 
 console.log(tree.find(root, 18));
+console.log(tree.levelOrder(root));

@@ -95,12 +95,34 @@ const Tree = () => {
         }
       }
 
+      const levelOrder = (root, callback) => {
+        if(root === null) return [];
+        const queue = []; // FIFO queue
+        queue.push(root);
+        const resultsArr = [];
+
+        while (queue.length != 0) {
+          let subArr = [];
+          let queueLength = queue.length;
+          for(let i = 0; i < queueLength; i+=1) {
+            let tempNode = queue.shift();
+            subArr.push(tempNode.value);
+            if(tempNode.left) queue.push(tempNode.left);
+            if(tempNode.right) queue.push(tempNode.right);
+            if(callback) callback(tempNode);
+          }
+          resultsArr.push(subArr);
+        }
+        if(!callback) return resultsArr;
+      }
+
     return {
         buildTree,
         prettyPrint,
         insert,
         deleteNode,
         find,
+        levelOrder,
     }
 }
 

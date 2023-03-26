@@ -116,6 +116,17 @@ const Tree = () => {
         if(!callback) return resultsArr;
       }
 
+      const inorder = (root, callback, result = []) => {
+        if(root === null) return;
+        if(root) {
+          if(callback) callback(root);
+          inorder(root.left, callback, result);
+          result.push(root.value);
+          inorder(root.right, callback, result);
+        }
+        if(result) return result;
+      }
+
     return {
         buildTree,
         prettyPrint,
@@ -123,6 +134,7 @@ const Tree = () => {
         deleteNode,
         find,
         levelOrder,
+        inorder,
     }
 }
 
